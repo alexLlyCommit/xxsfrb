@@ -27,6 +27,9 @@ export default class Home extends Component {
       age
     });
   }
+  handleGreet() {
+    this.props.greet(this.state.age);
+  }
   render() {
     return (
       <div className="container">
@@ -63,6 +66,15 @@ export default class Home extends Component {
             <button className="btn btn-primary" onClick={this.onReduceOlder}>
               Reduce me order
             </button>
+            <br />
+            <br />
+            <br />
+            <button
+              className="btn btn-primary"
+              onClick={this.handleGreet.bind(this)}
+            >
+              Greet
+            </button>
           </div>
         </div>
       </div>
@@ -73,7 +85,8 @@ Home.propTypes = {
   name: PropTypes.string,
   age: PropTypes.number,
   user: PropTypes.object,
-  children: PropTypes.element.isRequired
+  children: PropTypes.element.isRequired,
+  greet: PropTypes.func
 };
 Home.defaultProps = {
   name: "Harry",
