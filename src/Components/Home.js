@@ -5,7 +5,7 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      age: this.props.age
+      age: props.age
     };
     this.onDecrease = this.onDecrease.bind(this);
   }
